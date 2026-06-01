@@ -20,4 +20,30 @@ Dataset público: Brazilian E-Commerce Public Dataset by Olist, disponível no K
 
 ## Status
 
-Fase 1: estrutura inicial do projeto e organização dos dados brutos.
+Fase 2: importação dos CSVs brutos para SQLite.
+
+## Estrutura inicial
+
+```text
+data/raw/olist/              # CSVs brutos baixados do Kaggle
+data/processed/              # banco SQLite gerado localmente
+docs/                        # documentação do projeto
+outputs/                     # arquivos pequenos de validação e saídas analíticas
+scripts/                     # scripts de preparação e análise
+sql/                         # consultas SQL do projeto
+```
+
+## Execução da importação
+
+```powershell
+python scripts/import_olist_to_sqlite.py
+```
+
+Esse comando gera:
+
+```text
+data/processed/olist_marketplace.db
+outputs/import_summary.csv
+```
+
+Mais detalhes em [docs/importacao_sqlite.md](docs/importacao_sqlite.md).

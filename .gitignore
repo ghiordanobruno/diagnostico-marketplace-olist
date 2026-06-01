@@ -1,5 +1,30 @@
+# Dados brutos baixados do Kaggle
 data/raw/
+
+# Bancos locais gerados pelo projeto
 *.db
 *.sqlite
+*.db-journal
+*.sqlite-journal
+
+# Arquivos Excel gerados localmente
 *.xlsx
+
+# Ambientes virtuais Python
+.venv/
+venv/
+
+# Cache Python
 __pycache__/
+*.pyc
+
+# Arquivos locais de configuração/ambiente
+.env
+
+# Configurações locais de editores
+.vscode/
+.idea/
+
+# Arquivos temporários do sistema
+Thumbs.db
+.DS_Store
