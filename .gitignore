@@ -1,0 +1,5 @@
+data/raw/
+*.db
+*.sqlite
+*.xlsx
+__pycache__/
