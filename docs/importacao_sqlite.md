@@ -1,10 +1,10 @@
-# Importacao dos CSVs para SQLite
+# Importação dos CSVs para SQLite
 
 ## Objetivo
 
 Criar um banco SQLite local a partir dos arquivos CSV brutos da Olist.
 
-Esta etapa transforma os arquivos separados em tabelas consultaveis com SQL, sem alterar os dados originais.
+Esta etapa transforma os arquivos separados em tabelas consultáveis com SQL, sem alterar os dados originais.
 
 ## Entrada
 
@@ -14,7 +14,7 @@ Os arquivos CSV devem estar em:
 data/raw/olist/
 ```
 
-## Saidas
+## Saídas
 
 O script gera:
 
@@ -23,7 +23,7 @@ data/processed/olist_marketplace.db
 outputs/import_summary.csv
 ```
 
-O arquivo `.db` e gerado localmente e nao deve ser enviado ao GitHub. O arquivo `outputs/import_summary.csv` e pequeno e serve como evidencia da importacao.
+O arquivo `.db` é gerado localmente e nao deve ser enviado ao GitHub. O arquivo `outputs/import_summary.csv` é pequeno e serve como evidência da importação.
 
 ## Comando
 
@@ -51,11 +51,11 @@ python scripts/import_olist_to_sqlite.py --raw-dir data/raw/olist --output-db da
 | `olist_sellers_dataset.csv` | `sellers` |
 | `product_category_name_translation.csv` | `product_category_name_translation` |
 
-## Decisao tecnica
+## Decisão técnica
 
-As colunas sao importadas inicialmente como texto para preservar os dados brutos. Conversoes de datas, valores numericos e indicadores serao feitas nas consultas SQL analiticas.
+As colunas são importadas inicialmente como texto para preservar os dados brutos. Conversões de datas, valores numéricos e indicadores serão feitas nas consultas SQL analíticas.
 
 Essa abordagem separa duas responsabilidades:
 
-- ingestao: carregar os dados sem modificar o conteudo original;
-- analise: aplicar regras de negocio, conversoes e calculos de KPIs.
+- ingestão: carregar os dados sem modificar o conteudo original;
+- análise: aplicar regras de negócio, conversões e cálculos de KPIs.
